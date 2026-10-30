@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Staircase</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="3"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+</svg>
+
+<div id="progress"></div>
+<div id="hud">
+  <span class="clock-chip" id="clock">09:00 AM · MON</span>
+  <button id="soundBtn" aria-pressed="false">♪ sound off</button>
+</div>
+<div id="toast">KEEP SCROLLING!</div>
+
+<!-- 1 OPEN -->
+<section class="scene" id="s-open" style="--len:260">
+  <div class="stage"><div class="shake">
+    <div class="stamps">
+      <div class="stamp" style="--r:-4deg">TAXES.</div>
+      <div class="stamp" style="--r:3deg">REPORTS.</div>
+      <div class="stamp" style="--r:-2deg">INVOICES.</div>
+    </div>
+    <p class="t center" data-at=".4">The average office worker works 9 hours a day, and Bob was no exception.</p>
+    <div class="hours" id="hours"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="t hours-label center" data-at=".5">hours logged today</div>
+  </div>
+  <div class="scroll-cue" id="cue">SCROLL TO CLOCK IN<br>↓</div>
+  </div>
+</section>
+
+<!-- 2 BOSS -->
+<section class="scene" id="s-boss" style="--len:240">
+  <div class="stage center">
+    <div>
+      <div class="shout" id="shout">“GET BACK<br>TO WORK!”</div>
+      <p class="t" data-at=".42" style="margin-top:4vh">his employer, trying to get the most out of the meagre bonuses they gave him.</p>
+      <div class="bonus" id="bonus">BONUS ENCLOSED: $<span id="bonusAmt">0.00</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 DESK -->
+<section class="scene" id="s-desk" style="--len:400">
+  <div class="stage">
+    <div class="dim" id="dim"></div>
+    <div class="two">
+      <div>
+        <div class="desktop" id="desktop">
+          <div class="monitor" id="monitor"><span id="monText"></span><span class="cursor"></span></div>
+        </div>
+        <p class="hint mono" id="failcount">&nbsp;</p>
+      </div>
+      <div>
+        <p class="t" data-at=".06">Balls of scrunched up paper cluttered the desk, reminders of his countless failures.</p>
+        <div class="gap"></div>
+        <p class="t" data-at=".3">The light from the monitor pierces through the dark,</p>
+        <p class="t" data-at=".4">All he could hear was the</p>
+        <p class="t mono" data-at=".48">Rapid tapping of fingers on keyboards;</p>
+        <p class="t" data-at=".6">And the occasional click of a coworker's pen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 STAIRS -->
+<section class="scene" id="s-stairs" style="--len:600">
+  <div class="stage">
+    <div class="two">
+      <svg class="stair-svg" id="stairSvg" viewBox="0 0 400 640" preserveAspectRatio="xMidYMid meet"></svg>
+      <div>
+        <p class="t" data-at=".02">The same monotonous work.</p>
+        <p class="t" data-at=".08">Everyday.</p>
+        <p class="t" data-at=".16">Everybody chasing the light at the end of the staircase,</p>
+        <p class="t" data-at=".25">One that was curved, steep and unstable.</p>
+        <p class="t" data-at=".35">As he works up each step towards <em>“a better life”</em>,</p>
+        <p class="t" data-at=".45">He becomes trapped in the harsh reality:</p>
+        <div class="gap"></div>
+        <p class="t" data-at=".62">Reaching the top of the staircase never leads to recognition or fulfilment,</p>
+        <p class="t" data-at=".72">It just becomes another title plate,</p>
+        <p class="t" data-at=".79">Collecting dust in the corner of his desk.</p>
+        <div class="plates" id="plates"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 DECAY -->
+<section class="scene" id="s-decay" style="--len:420">
+  <div class="stage">
+    <div class="two">
+      <div class="family-photo" id="photo">
+        <svg viewBox="0 0 120 90">
+          <g class="t1"><rect width="60" height="90" fill="#d9cdb2"/><circle cx="34" cy="38" r="9" fill="#8a7b62"/><rect x="24" y="48" width="20" height="30" rx="8" fill="#8a7b62"/></g>
+          <g class="t2"><rect x="60" width="60" height="90" fill="#d4c7aa"/><circle cx="82" cy="46" r="7" fill="#a3937a"/><rect x="74" y="54" width="16" height="24" rx="7" fill="#a3937a"/><path d="M60 0 L64 12 L58 25 L63 40 L57 55 L62 70 L58 90" stroke="#fffdf5" stroke-width="2" fill="none"/></g>
+        </svg>
+        <div class="cap">beach, 2014</div>
+      </div>
+      <div class="swap">
+        <div class="block">
+          <p class="t" data-at=".04" data-out=".55">Bob could feel himself deteriorating..</p>
+          <p class="t drift" data-at=".12" data-out=".55" style="padding-left:28%">his family in ruins…</p>
+          <p class="t drift2" data-at=".2" data-out=".55" style="padding-left:50%">disconnected…</p>
+          <p class="t" data-at=".28" data-out=".55" style="padding-left:4%">From the times he chose the staircase,</p>
+          <p class="t" data-at=".36" data-out=".55" style="padding-left:10%">Over time with his family.</p>
+        </div>
+        <div class="block">
+          <p class="t" data-at=".6">And sometimes, he wondered whether climbing the stairs was worth it.</p>
+          <p class="t" data-at=".68">To get a minute raise…</p>
+          <p class="t" data-at=".75">Only to find a new staircase</p>
+          <p class="t steeper" data-at=".82" id="steeper">Steeper than before.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 SUN -->
+<section class="scene" id="s-sun" style="--len:340">
+  <div class="stage center" id="sunStage">
+    <svg class="stars" id="stars" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+    <div class="sunball" id="sunball"></div>
+    <div class="horizon"></div>
+    <svg class="chaser" id="chaser" viewBox="0 0 24 46"><circle cx="12" cy="6" r="5" fill="#1f1b16"/><path d="M12 11 L12 30 M12 16 L4 24 M12 16 L20 10" stroke="#1f1b16" stroke-width="2.4" fill="none" stroke-linecap="round"/><path id="legA" d="M12 30 L6 45" stroke="#1f1b16" stroke-width="2.4" stroke-linecap="round"/><path id="legB" d="M12 30 L18 45" stroke="#1f1b16" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <div class="sun-words">
+      <p class="t sun-txt" data-at=".03" id="sunTxt1">Like chasing the sun,</p>
+      <p class="t sun-txt" data-at=".72" id="sunTxt2">When it was already night.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 WALL -->
+<section class="scene" id="s-wall" style="--len:480">
+  <div class="stage">
+    <div class="two wall-grid">
+      <svg class="wall-svg" viewBox="0 0 200 600" preserveAspectRatio="xMidYMid meet" id="wallSvg"></svg>
+      <div>
+        <p class="t" data-at=".03">And yet again, another series of stairs,</p>
+        <p class="t" data-at=".1">steep…</p>
+        <p class="t" data-at=".16">..like a wall.</p>
+        <p class="t" data-at=".22">Another boulder found in his <em>“work tracker”</em>, one that was placed on the <em>“Top Priority Must Be Done ASAP List”</em>.</p>
+        <div class="tracker" id="tracker">
+          <header><span>WORK TRACKER v4.2</span><span>bob.m</span></header>
+          <div class="list-title">▲ TOP PRIORITY MUST BE DONE ASAP</div>
+          <ul class="tasks" id="tasks"></ul>
+          <footer><span>completed: <b id="doneN">0</b></span><span>remaining: <b id="leftN">0</b></span></footer>
+        </div>
+        <div class="week" id="week"><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div class="we"><i>IN ROOM</i>SAT</div><div class="we"><i>IN ROOM</i>SUN</div></div>
+        <p class="t" data-at=".9" style="margin-top:2vh">Another weekend spent in his room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<section class="scene" id="s-div" style="--len:120">
+  <div class="stage center"><div class="divider" id="divider"><span>—</span><span>—</span><span>—</span><span>—</span></div></div>
+</section>
+
+<!-- 8 HOUSE -->
+<section class="scene" id="s-house" style="--len:420">
+  <div class="stage" style="padding:0">
+    <div class="shake" id="houseShake" style="position:absolute;inset:0">
+      <div class="taps" id="taps"></div>
+      <svg class="plates-pile" id="dishes" viewBox="0 0 180 120"><g fill="#fffdf5" stroke="#1f1b16" stroke-width="2"><ellipse cx="90" cy="110" rx="80" ry="8"/><ellipse cx="88" cy="98" rx="74" ry="8"/><ellipse cx="93" cy="86" rx="76" ry="8"/><ellipse cx="86" cy="74" rx="70" ry="8"/><ellipse cx="92" cy="62" rx="72" ry="8"/><ellipse cx="89" cy="50" rx="66" ry="8"/></g></svg>
+      <div class="house-text">
+        <p class="t" data-at=".02">The house was cluttered, and the stench of old laundry wafted through the room.</p>
+        <p class="t" data-at=".09">Piles of dirty plates lined the kitchen.</p>
+        <p class="t" data-at=".15">The sound of a keyboard tapping filled the silence, and it became so loud that Bob couldn’t stand it anymore.</p>
+        <p class="t" data-at=".42">But the task had to be done.</p>
+        <p class="t" data-at=".5">His hands cramped up,</p>
+        <p class="t" data-at=".56">His back writhing in agony.</p>
+        <p class="t" data-at=".63">He stared at his screen, hungry, thirsty and starving,</p>
+        <div class="big-clock" id="bigClock">3:12 PM</div>
+        <p class="t" data-at=".85">He had just wasted the last 4 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 PHONE -->
+<section class="scene" id="s-phone" style="--len:800">
+  <div class="stage">
+    <div class="two phone-grid">
+      <div class="swap">
+        <div class="block">
+          <p class="t" data-at=".01" data-out=".4">His phone pinged.</p>
+          <p class="t" data-at=".08" data-out=".4">“Hey, would you like to come to the family gathering, Dad?” a message from his son.</p>
+          <p class="t" data-at=".14" data-out=".4">He stared at the screen, his finger hovering over it.</p>
+          <p class="t" data-at=".2" data-out=".4">He thought about the light at the end of the staircase he had been climbing his whole life.</p>
+          <p class="t" data-at=".26" data-out=".4">Without thinking, he started typing his usual reply,</p>
+          <p class="t mono small" data-at=".3" data-out=".4">“Sorry, I can’t; I’ve got a big assignment to do”</p>
+        </div>
+        <div class="block">
+          <p class="t" data-at=".43">And then… he thought about all the countless times he had sent this message.</p>
+          <p class="t" data-at=".5">The many times he had neglected his son,</p>
+          <p class="t" data-at=".56">The many times he had heard his son quietly wishing for a better life,</p>
+          <p class="t" data-at=".62"><em>A better father…</em></p>
+          <p class="t" data-at=".67">The light at the end was just an illusion,</p>
+          <p class="t" data-at=".71">That just kept sucking him in the further he went..</p>
+          <p class="t" data-at=".76">He hesitated.</p>
+          <p class="t" data-at=".8">And…</p>
+          <p class="t letgo" data-at=".91"><strong>He let go.</strong></p>
+        </div>
+      </div>
+      <div class="phone" id="phoneEl">
+        <div class="notch"></div>
+        <div class="ph-head"><div class="av">S</div><div>Son</div><small>iMessage</small></div>
+        <div class="thread" id="thread"><div id="ghosts"></div><div class="ts" id="ts">Sat 7:14 PM</div><div class="bubble them" id="sonMsg">Hey, would you like to come to the family gathering, Dad?</div></div>
+        <div class="compose"><div class="field" id="field"><span id="fieldTxt"></span><span class="cursor"></span></div><div class="send" id="sendIcon">↑</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 PATH -->
+<section class="scene" id="s-path" style="--len:420">
+  <div class="stage" id="pathStage" style="padding:0">
+    <svg class="crumble" id="crumble" viewBox="0 0 240 300"></svg>
+    <div class="path-text">
+      <h2 class="t" data-at=".04">Abandoning the endless staircase,</h2>
+      <p class="t" data-at=".6">He began carving out his own path.</p>
+    </div>
+    <svg class="path-svg" id="pathSvg" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet">
+      <path id="trail" d="M-30 330 C 90 320, 150 250, 250 270 S 400 360, 500 300 S 640 190, 740 250 S 880 340, 1040 270" fill="none" stroke="#5a4127" stroke-width="5" stroke-linecap="round"/>
+      <g id="flowers"></g>
+      <g id="walker"><circle cx="0" cy="-30" r="5" fill="#1f1b16"/><path d="M0 -25 L0 -10 M0 -20 L-6 -14 M0 -20 L6 -14" stroke="#1f1b16" stroke-width="2.2" stroke-linecap="round"/><path id="wLegA" d="M0 -10 L-5 0" stroke="#1f1b16" stroke-width="2.2" stroke-linecap="round"/><path id="wLegB" d="M0 -10 L5 0" stroke="#1f1b16" stroke-width="2.2" stroke-linecap="round"/></g>
+    </svg>
+  </div>
+</section>
+
+<script src="app.js"></script>
+<script src="app2.js"></script>
+</body>
+</html>
